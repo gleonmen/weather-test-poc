@@ -11,6 +11,7 @@ import com.challenge.model.ForecastResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
+
 import java.util.HashMap;
 import java.util.Map;
 

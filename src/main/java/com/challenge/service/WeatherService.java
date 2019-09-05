@@ -17,18 +17,20 @@ import org.springframework.stereotype.Service;
 public class WeatherService {
 
 
-    @Autowired
     private HazelcastCache hazelcastCache;
-
-    @Autowired
     private APIClientFactory factory;
 
-    private ClientAPIService client;
+    @Autowired
+    public WeatherService(HazelcastCache hazelcastCache, APIClientFactory factory) {
+        this.hazelcastCache = hazelcastCache;
+        this.factory = factory;
+    }
+
     @HystrixCommand(fallbackMethod = "fallbackRetrieveWeather", commandProperties = {
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
     })
     public ForecastResponse checkWeather(RequestParametersDto parameters) {
-        client = factory.getClientAPIService(parameters.getApiService());
+        ClientAPIService client = factory.getClientAPIService(parameters.getApiService());
         ForecastResponse response = client.getForecastFor(parameters);
         log.debug("Response {}", response);
         hazelcastCache.writeData(parameters.getLatitude() + "::" + parameters.getLongitude(), response);

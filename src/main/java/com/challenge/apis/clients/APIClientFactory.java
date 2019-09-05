@@ -2,8 +2,8 @@ package com.challenge.apis.clients;
 
 import com.challenge.apis.clients.darksky.DarkSkyClient;
 import com.challenge.apis.clients.weatherbit.WeatherBitClient;
-import com.challenge.config.ApiConfigReader;
 import com.challenge.apis.clients.weatherbit.mapper.imp.WeatherBitMapperImpl;
+import com.challenge.config.ApiConfigReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 

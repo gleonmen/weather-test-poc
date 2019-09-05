@@ -8,8 +8,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class LocationService {
     public static final String DEFAULT_CITY = "Bogota";
-    @Autowired
+
     private LocationRepository locationRepository;
+
+    @Autowired
+    public LocationService(LocationRepository locationRepository) {
+        this.locationRepository = locationRepository;
+    }
 
     public Location getLocationByCity(String city) {
         Location location = locationRepository.findByCity(city);
