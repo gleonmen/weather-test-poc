@@ -1,14 +1,13 @@
 package com.challenge.apis.clients.weatherbit.mapper.imp;
 
+import com.challenge.apis.clients.weatherbit.mapper.WeatherBitMapper;
 import com.challenge.apis.clients.weatherbit.model.Forecast;
 import com.challenge.apis.clients.weatherbit.model.ForecastDay;
 import com.challenge.commons.BaseMapper;
-import com.challenge.apis.clients.weatherbit.mapper.WeatherBitMapper;
 import com.challenge.model.CurrentForecast;
 import com.challenge.model.DailyForecast;
 import com.challenge.model.DailyForecastData;
 import com.challenge.model.ForecastResponse;
-
 
 import java.util.ArrayList;
 import java.util.List;

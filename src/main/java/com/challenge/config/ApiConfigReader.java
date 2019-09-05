@@ -14,7 +14,6 @@ public class ApiConfigReader {
     @Value("${darksky.base.url}")
     private String darkskyBaseUrl;
 
-    //TODO Slip this config file for eahc API
     @Value("${weatherbit.api.key}")
     private String weatherbitapikey;
 
