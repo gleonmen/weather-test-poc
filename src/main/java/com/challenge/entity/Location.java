@@ -10,8 +10,8 @@ import javax.persistence.Id;
 @Entity
 @Data
 public class Location {
-	@Id
-	@GeneratedValue
+    @Id
+    @GeneratedValue
     private long id;
     private String city;
     private double latitude;

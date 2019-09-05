@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class HazelcastCacheConfig {
 
     @Bean
-    public Config hazelCastConfig(){
+    public Config hazelCastConfig() {
         Config config = new Config();
         config.getSerializationConfig().getSerializerConfigs().add(
                 new SerializerConfig().

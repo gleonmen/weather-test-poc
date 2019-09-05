@@ -28,6 +28,7 @@
         </sonar.exclusions>
         <docker.image.name>${project.name}</docker.image.name>
         <docker.image.tag>latest</docker.image.tag>
+        <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
     </properties>
 
 
@@ -111,6 +112,8 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
