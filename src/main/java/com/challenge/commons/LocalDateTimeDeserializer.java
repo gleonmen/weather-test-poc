@@ -11,14 +11,14 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 public class LocalDateTimeDeserializer extends JsonDeserializer<LocalDateTime> {
-	public LocalDateTimeDeserializer() {
-	}
+    public LocalDateTimeDeserializer() {
+    }
 
-	@Override
-	    public LocalDateTime deserialize(JsonParser arg0, DeserializationContext arg1) throws IOException, JsonProcessingException {
-	    	long timeAsLong = arg0.getLongValue();
-	    	LocalDateTime localDateTime =
-	    		    LocalDateTime.ofInstant(Instant.ofEpochSecond(timeAsLong), ZoneId.systemDefault());
-	        return localDateTime;
-	    }
+    @Override
+    public LocalDateTime deserialize(JsonParser arg0, DeserializationContext arg1) throws IOException {
+        long timeAsLong = arg0.getLongValue();
+        LocalDateTime localDateTime =
+                LocalDateTime.ofInstant(Instant.ofEpochSecond(timeAsLong), ZoneId.systemDefault());
+        return localDateTime;
+    }
 }

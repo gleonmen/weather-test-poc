@@ -6,10 +6,10 @@ import lombok.NoArgsConstructor;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
-
+@NoArgsConstructor
 public class CurrentForecast extends ForecastBase {
 
-	private double temperature;
+    private double temperature;
 
-	
+
 }

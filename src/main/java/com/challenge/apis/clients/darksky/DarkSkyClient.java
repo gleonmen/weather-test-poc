@@ -1,8 +1,9 @@
-package com.challenge.clients.imp;
+package com.challenge.apis.clients.darksky;
 
-import com.challenge.forecastRequest.RequestParametersDto;
-import com.challenge.clients.ClientAPIService;
-import com.challenge.config.ApplicationConfigReader;
+
+import com.challenge.apis.clients.ClientAPIService;
+import com.challenge.config.ApiConfigReader;
+import com.challenge.dto.RequestParametersDto;
 import com.challenge.exceptions.ExternalServiceGatewayException;
 import com.challenge.model.ForecastResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -20,12 +21,15 @@ public class DarkSkyClient implements ClientAPIService {
     protected static final String ARG_LATITUDE = "latitude";
     protected static final String ARG_LONGITUDE = "longitude";
     protected static final String ARG_API_KEY = "apiKey";
-
+    protected static final String UNITS = "units";
+    protected static final String EXCLUDE = "exclude";
+    public static final String EXCLUDE_TEXT_VALUE = "minutely,hourly,alerts,flags";
 
     private RestTemplate restTemplate;
-    private ApplicationConfigReader config;
+    private ApiConfigReader config;
 
-    public DarkSkyClient(RestTemplate restTemplate, ApplicationConfigReader config) {
+
+    public DarkSkyClient(RestTemplate restTemplate, ApiConfigReader config) {
         this.restTemplate = restTemplate;
         this.config = config;
     }
@@ -48,6 +52,8 @@ public class DarkSkyClient implements ClientAPIService {
         arguments.put(ARG_API_KEY, config.getDarkskyApiKey());
         arguments.put(ARG_LONGITUDE, String.valueOf(requestParameters.getLongitude()));
         arguments.put(ARG_LATITUDE, String.valueOf(requestParameters.getLatitude()));
+        arguments.put(UNITS, requestParameters.getUnit().equalsIgnoreCase("si") ? "si" : "us");
+        arguments.put(EXCLUDE, EXCLUDE_TEXT_VALUE);
         return arguments;
     }
 

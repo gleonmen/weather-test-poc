@@ -1,25 +1,22 @@
-package com.challenge.service;
+package com.challenge.repository;
 
 import com.challenge.model.ForecastResponse;
 import com.hazelcast.core.HazelcastInstance;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Service
+@Component
 @Slf4j
-public class HazelcastService {
+public class HazelcastCache {
 
 
     private final HazelcastInstance hazelcastInstance;
 
     @Autowired
-    HazelcastService(HazelcastInstance hazelcastInstance) {
+    HazelcastCache(HazelcastInstance hazelcastInstance) {
         this.hazelcastInstance = hazelcastInstance;
     }
 

@@ -11,9 +11,6 @@ import java.util.List;
 @NoArgsConstructor
 public class DailyForecast {
 
-	private String summary;
-	private String icon;
-	
-	private List<DailyForecastData> data;
-	
+    private List<DailyForecastData> data;
+
 }

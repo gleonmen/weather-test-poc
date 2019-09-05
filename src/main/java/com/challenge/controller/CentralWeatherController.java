@@ -1,9 +1,8 @@
 package com.challenge.controller;
 
-import com.challenge.forecastRequest.RequestParametersDto;
+import com.challenge.dto.RequestParametersDto;
 import com.challenge.entity.Location;
 import com.challenge.model.ForecastResponse;
-import com.challenge.service.HazelcastService;
 import com.challenge.service.LocationService;
 import com.challenge.service.WeatherService;
 import lombok.extern.slf4j.Slf4j;
@@ -21,14 +20,13 @@ import javax.validation.constraints.NotNull;
 @RequestMapping(path = "v1/check-weather")
 @RestController
 @Slf4j
-public class WeatherController {
+public class CentralWeatherController {
 
     @Autowired
     private WeatherService service;
 
     @Autowired
     private LocationService locationService;
-
 
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)

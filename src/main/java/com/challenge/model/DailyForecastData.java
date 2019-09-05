@@ -6,12 +6,8 @@ import lombok.NoArgsConstructor;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
+@NoArgsConstructor
 public class DailyForecastData extends ForecastBase {
-
-	private double temperatureMin;
-	private double temperatureMax;
-
-	public DailyForecastData() {
-	}
-
+    private double temperatureMin;
+    private double temperatureMax;
 }

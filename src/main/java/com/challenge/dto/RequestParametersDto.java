@@ -1,4 +1,4 @@
-package com.challenge.forecastRequest;
+package com.challenge.dto;
 
 import lombok.Builder;
 import lombok.Data;
